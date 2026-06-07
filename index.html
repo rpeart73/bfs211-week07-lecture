@@ -950,8 +950,8 @@ Photographs via Wikimedia Commons under public domain, CC0, or CC BY, credited p
  function spine(){if(!flow||!fill)return;var r=flow.getBoundingClientRect();var total=r.height-innerHeight*.5;var done=Math.min(Math.max(innerHeight*.5-r.top,0),Math.max(total,1));fill.style.height=(total>0?done/total*r.height:0)+'px';}
  document.querySelectorAll('.ev').forEach(function(ev){ev.querySelector('.ev-play').addEventListener('click',function(){
    var id=ev.getAttribute('data-yt');var f=document.createElement('div');f.className='ev-frame';
-   var tt=ev.querySelector('.ev-title')||ev.querySelector('.poster-meta i');var og=encodeURIComponent(location.origin);
-   f.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&playsinline=1&modestbranding=1&origin='+og+'" title="'+(tt?tt.textContent:'video')+'" allow="encrypted-media;picture-in-picture;fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>';
+   var tt=ev.querySelector('.ev-title')||ev.querySelector('.poster-meta i');
+   f.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0" title="'+(tt?tt.textContent:'video')+'" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>';
    ev.classList.add('playing');ev.appendChild(f);});});
  var mb=document.getElementById('menuBtn'),menu=document.getElementById('menu');
  mb.addEventListener('click',function(e){e.stopPropagation();menu.classList.toggle('open');});
